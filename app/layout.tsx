@@ -3,22 +3,23 @@ import { Inter } from "@next/font/google";
 import LocalFont from "@next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
-
+const domain = "lucasw.dev"
+const des= "UCLA mathematics of computation student and freelance web developer "
 export const metadata: Metadata = {
 	title: {
-		default: "chronark.com",
-		template: "%s | chronark.com",
+		default: domain,
+		template: "%s |" + domain,
 	},
-	description: "Software engineer at upstash.com and founder of planetfall.io",
+	description: des,
 	openGraph: {
-		title: "chronark.com",
+		title: domain,
 		description:
-			"Software engineer at upstash.com and founder of planetfall.io",
-		url: "https://chronark.com",
-		siteName: "chronark.com",
+			des,
+		url: "https://" + domain,
+		siteName: domain,
 		images: [
 			{
-				url: "https://chronark.com/og.png",
+				url: "https://" + domain + "/og.png",
 				width: 1920,
 				height: 1080,
 			},
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "Chronark",
+		title: "Lwhels",
 		card: "summary_large_image",
 	},
 	icons: {
