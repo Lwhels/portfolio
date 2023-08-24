@@ -1,15 +1,16 @@
 "use client";
-import { Github, Mail, Twitter, Instagram, Figma } from "lucide-react";
+import { Github, Mail, Twitter, Instagram, Figma, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
-const email = "Wheeler.lucas2002@gmail.com"
+const email = "lwheelerdev@gmail.com"
+// make the first link Linkedin
 const socials = [
 	{
-		icon: <Figma size={20} />,
-		href: "https://twitter.com/chronark_",
-		label: "Twitter",
-		handle: "@chronark_",
+		icon: <Linkedin size={20} />,
+		href: "https://www.linkedin.com/in/lucas-wheeler-0693651b3",
+		label: "Linkedin",
+		handle: 'Lucas\xa0Wheeler',
 	},
 	{
 		icon: <Mail size={20} />,
@@ -46,7 +47,7 @@ export default function Example() {
 									{s.icon}
 								</span>{" "}
 								<div className="z-10 flex flex-col items-center">
-									<span className="text-xl font-medium duration-150 lg:text-3xl text-zinc-200 group-hover:text-white font-display">
+									<span className="text-xl font-medium duration-150 lg:text-2xl xl:text-3xl text-zinc-200 group-hover:text-white font-display">
 										{s.handle}
 									</span>
 									<span className="mt-4 text-sm text-center duration-1000 text-zinc-400 group-hover:text-zinc-200">

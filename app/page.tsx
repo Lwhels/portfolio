@@ -38,7 +38,7 @@ export default function Home() {
 					Hi, my name is Lucas, I'm a Mathematics of Computation Student @{" "}
 					<Link
 						target="_blank"
-						href="https://ucla.com"
+						href="https://ucla.edu"
 						className="underline duration-500 hover:text-zinc-300"
 					>
 						UCLA
