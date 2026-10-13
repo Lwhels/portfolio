@@ -3,18 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3002",
     "build": "next build",
     "start": "next start",
+    "test": "NODE_OPTIONS='--experimental-require-module' vitest run",
+    "test:coverage": "NODE_OPTIONS='--experimental-require-module' vitest run --coverage",
     "fmt": "pnpm rome check . --apply-suggested && pnpm rome format . --write"
   },
   "dependencies": {
     "@next/font": "^13.4.3",
     "@next/mdx": "^13.4.3",
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.18.0",
+    "@types/canvas-confetti": "^1.9.0",
     "@types/node": "20.2.1",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
+    "@types/three": "^0.174.0",
     "@upstash/redis": "^1.20.6",
+    "canvas-confetti": "^1.9.4",
     "contentlayer": "^0.3.0",
     "framer-motion": "^10.12.12",
     "lucide-react": "^0.220.0",
@@ -28,18 +35,29 @@
     "rehype-pretty-code": "^0.9.4",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
+    "shiki": "^0.14.7",
+    "simplex-noise": "^4.0.3",
+    "three": "0.174.0",
+    "three-mesh-bvh": "^0.8.3",
     "typescript": "5.0.4"
   },
   "devDependencies": {
     "@opentelemetry/api": "^1.4.1",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "@vitest/coverage-v8": "^4.1.11",
     "autoprefixer": "^10.4.13",
+    "jsdom": "^27.0.1",
     "postcss": "^8.4.21",
     "postcss-nesting": "^11.2.2",
     "rome": "^11.0.0",
     "tailwindcss": "^3.2.7",
-    "tailwindcss-debug-screens": "^2.2.1"
+    "tailwindcss-debug-screens": "^2.2.1",
+    "vitest": "^4.1.11"
   },
   "pnpm": {
     "overrides": {

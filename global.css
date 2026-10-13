@@ -3,8 +3,291 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --accent-1: 99 102 241;    /* indigo-500 */
+    --accent-2: 139 92 246;    /* violet-500 */
+    --accent-3: 217 70 239;    /* fuchsia-500 */
+    --surface: 9 9 11;         /* zinc-950 */
+    --surface-light: 24 24 27; /* zinc-900 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: rgba(var(--accent-2), 0.3);
+    color: #fff;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   .text-edge-outline {
     -webkit-text-stroke: 1px rgba(255,255,255,0.3);
   }
-} 
+}
 
+@layer utilities {
+  /* ─────────────────────────────────────────
+     Gradient text utilities
+  ───────────────────────────────────────── */
+  .text-gradient {
+    background: linear-gradient(135deg, rgb(var(--accent-1)), rgb(var(--accent-2)), rgb(var(--accent-3)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-subtle {
+    background: linear-gradient(135deg, #e0e7ff, #c4b5fd, #e9d5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─────────────────────────────────────────
+     3D text extrusion — layered shadows
+  ───────────────────────────────────────── */
+  .text-3d {
+    text-shadow:
+      0 1px 0 rgba(99,102,241,0.5),
+      0 2px 0 rgba(99,102,241,0.4),
+      0 3px 0 rgba(99,102,241,0.3),
+      0 4px 0 rgba(99,102,241,0.2),
+      0 5px 0 rgba(99,102,241,0.1),
+      0 8px 20px rgba(139,92,246,0.4),
+      0 15px 40px rgba(139,92,246,0.2);
+  }
+
+  /* ─────────────────────────────────────────
+     Glassmorphism surfaces
+  ───────────────────────────────────────── */
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* ─────────────────────────────────────────
+     3D card base — enables preserve-3d
+  ───────────────────────────────────────── */
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .card-3d-inner {
+    transform-style: preserve-3d;
+  }
+
+  .depth-4 { transform: translateZ(4px); }
+  .depth-8 { transform: translateZ(8px); }
+  .depth-12 { transform: translateZ(12px); }
+  .depth-16 { transform: translateZ(16px); }
+  .depth-24 { transform: translateZ(24px); }
+
+  /* ─────────────────────────────────────────
+     Animated gradient border
+  ───────────────────────────────────────── */
+  .gradient-border {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(var(--accent-1), 0.0),
+      rgba(var(--accent-2), 0.0),
+      rgba(var(--accent-3), 0.0)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.5s ease;
+  }
+
+  .gradient-border:hover::before {
+    background: linear-gradient(
+      135deg,
+      rgba(var(--accent-1), 0.6),
+      rgba(var(--accent-2), 0.6),
+      rgba(var(--accent-3), 0.6)
+    );
+  }
+
+  /* ─────────────────────────────────────────
+     Glow shadow
+  ───────────────────────────────────────── */
+  .glow-shadow {
+    transition: box-shadow 0.5s ease;
+  }
+
+  .glow-shadow:hover {
+    box-shadow: 0 0 40px -12px rgba(var(--accent-2), 0.35);
+  }
+
+  /* ─────────────────────────────────────────
+     Gradient divider
+  ───────────────────────────────────────── */
+  .divider-gradient {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(var(--accent-1), 0.3),
+      rgba(var(--accent-2), 0.5),
+      rgba(var(--accent-3), 0.3),
+      transparent
+    );
+  }
+
+  /* ─────────────────────────────────────────
+     Scroll indicator
+  ───────────────────────────────────────── */
+  .scroll-indicator {
+    animation: scroll-bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.5; }
+    50%       { transform: translateY(8px); opacity: 1; }
+  }
+
+  /* ─────────────────────────────────────────
+     Shimmer
+  ───────────────────────────────────────── */
+  .shimmer {
+    background: linear-gradient(
+      110deg,
+      transparent 33%,
+      rgba(var(--accent-2), 0.08) 50%,
+      transparent 67%
+    );
+    background-size: 300% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* ─────────────────────────────────────────
+     Hover arrow slide
+  ───────────────────────────────────────── */
+  .arrow-slide {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .group:hover .arrow-slide {
+    transform: translateX(4px);
+  }
+
+  /* ─────────────────────────────────────────
+     Aurora background blobs
+  ───────────────────────────────────────── */
+  .aurora-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    will-change: transform, opacity;
+  }
+
+  @keyframes aurora-1 {
+    0%, 100% { transform: translate(0%, 0%) scale(1); }
+    33%       { transform: translate(8%, -12%) scale(1.15); }
+    66%       { transform: translate(-6%, 8%) scale(0.9); }
+  }
+  @keyframes aurora-2 {
+    0%, 100% { transform: translate(0%, 0%) scale(1); }
+    33%       { transform: translate(-10%, 10%) scale(1.1); }
+    66%       { transform: translate(12%, -6%) scale(0.95); }
+  }
+  @keyframes aurora-3 {
+    0%, 100% { transform: translate(0%, 0%) scale(1); }
+    33%       { transform: translate(6%, 14%) scale(0.85); }
+    66%       { transform: translate(-8%, -10%) scale(1.2); }
+  }
+
+  /* ─────────────────────────────────────────
+     Float variants for orbs
+  ───────────────────────────────────────── */
+  @keyframes float-a {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50%       { transform: translateY(-18px) rotate(5deg); }
+  }
+  @keyframes float-b {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50%       { transform: translateY(-12px) rotate(-4deg); }
+  }
+  @keyframes float-c {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50%       { transform: translateY(-22px) rotate(6deg); }
+  }
+
+  .float-a { animation: float-a 7s ease-in-out infinite; }
+  .float-b { animation: float-b 9s ease-in-out infinite; }
+  .float-c { animation: float-c 5.5s ease-in-out infinite; }
+
+  /* ─────────────────────────────────────────
+     Depth-in entrance (scale + blur clears)
+  ───────────────────────────────────────── */
+  .animate-depth-in {
+    animation: depth-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes depth-in {
+    0%   { opacity: 0; transform: scale(0.88) perspective(800px) translateZ(-60px); filter: blur(8px); }
+    100% { opacity: 1; transform: scale(1) perspective(800px) translateZ(0); filter: blur(0); }
+  }
+
+  /* ─────────────────────────────────────────
+     Glow orb (used for project badge etc.)
+  ───────────────────────────────────────── */
+  .glow-violet {
+    box-shadow: 0 0 24px rgba(139,92,246,0.5), 0 0 60px rgba(139,92,246,0.2);
+  }
+  .glow-indigo {
+    box-shadow: 0 0 24px rgba(99,102,241,0.5), 0 0 60px rgba(99,102,241,0.2);
+  }
+  .glow-fuchsia {
+    box-shadow: 0 0 24px rgba(217,70,239,0.5), 0 0 60px rgba(217,70,239,0.2);
+  }
+
+  /* ─────────────────────────────────────────
+     Data Observatory spatial HTML tags
+  ───────────────────────────────────────── */
+  .observatory-tag {
+    background: rgba(9, 13, 22, 0.94);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 15px rgba(139, 92, 246, 0.3);
+    padding: 0.35rem 1rem;
+    border-radius: 9999px;
+    color: #f8fafc;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    user-select: none;
+  }
+}
