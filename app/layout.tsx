@@ -1,14 +1,18 @@
 import "../global.css";
-import { Inter } from "@next/font/google";
-import LocalFont from "@next/font/local";
+import { Inter } from "next/font/google";
+import LocalFont from "next/font/local";
 import { Metadata } from "next";
 import { Analytics } from "./components/analytics";
-const domain = "lucasw.dev"
-const des= "UCLA mathematics of computation student and freelance web developer "
+import { CommandPalette } from "./components/command-palette";
+
+const domain = "lucasw.dev";
+const des = "UCLA mathematics of computation student and 3D web application developer";
+
 export const metadata: Metadata = {
+	metadataBase: new URL("https://lucasw.dev"),
 	title: {
 		default: domain,
-		template: "%s |" + domain,
+		template: "%s | " + domain,
 	},
 	description: des,
 	openGraph: {
@@ -71,6 +75,7 @@ export default function RootLayout({
 					process.env.NODE_ENV === "development" ? "debug-screens" : undefined
 				}`}
 			>
+				<CommandPalette />
 				{children}
 			</body>
 		</html>
