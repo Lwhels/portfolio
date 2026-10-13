@@ -1,0 +1,27 @@
+---
+title: Follower Vault
+description: Zero-risk, 100% client-side Instagram follower auditor with Tinder-style swipe triage deck, persistent SQLite vault, and multi-snapshot timeline tracking.
+date: "2023-11-10"
+repository: "Lwhels/instagram-followers"
+published: true
+---
+
+Follower Vault is a privacy-first, zero-risk Instagram connection auditor and relationship manager. Unlike third-party apps that require account credentials and trigger Instagram bot bans, Follower Vault operates 100% locally and offline, parsing official Meta data export archives (`.zip`, `.html`, `.json`).
+
+## Key Features
+
+- **Tinder-Style Swipe Deck:** Interactive 3D card deck with smooth gesture physics, keyboard shortcuts (`←` to flag for unfollow, `→` to whitelist, `↑` for VIP, `Cmd+Z` / `U` for instant undo), and tactile Web Audio sound feedback.
+- **Whitelist & False-Positive Elimination:** Solves the raw diff clutter problem by allowing users to rapidly whitelist celebrities, news outlets, university clubs, and mentors that are intentionally followed without reciprocation.
+- **Persistent SQLite Vault:** Indexes accounts, relationship changes, custom tags (`#brand`, `#tech`, `#creator`), and personal notes in a local SQLite database (`follower_vault.db`).
+- **Multi-Snapshot Diff Engine:** Compares historical export snapshots over time to immediately identify Lost Followers, New Followers, and Removed Accounts.
+- **Master Audit Explorer Table:** Filterable table view with instant search, bulk whitelisting/flagging, and one-click direct profile links.
+- **Cross-Platform Delivery:** Available as a modern responsive web app, a native macOS desktop window (built via PyObjC Cocoa & WebKit), and a scriptable CLI (`python -m instagram_analyzer`).
+- **Comprehensive Testing:** Automated test suite with extensive coverage across parser logic, SQLite database mutations, and snapshot diffing.
+
+## Built With
+
+- [Python](https://www.python.org/)
+- [SQLite](https://www.sqlite.org/)
+- [BeautifulSoup 4](https://www.crummy.com/software/BeautifulSoup/)
+- [PyObjC (macOS Cocoa / WebKit)](https://pyobjc.readthedocs.io/)
+- [Pytest](https://pytest.org/)

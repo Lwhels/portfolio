@@ -1,0 +1,20 @@
+---
+title: Waymo Data Visualizer
+description: High-performance internal data visualization & plotting tool built with C++, gRPC, Protobuf, Angular, Three.js, and D3.js.
+date: "2024-09-01"
+published: true
+---
+
+During my Software Engineer Internship at Waymo (Autonomous Vehicles), I spearheaded the development of an internal data visualization and plotting tool.
+
+The tool launched to hundreds of employees across the organization within 3 months, earning a **Spot and Peer Bonus** for project impact, user satisfaction, and technical execution. Ranked **#1 in submitted code count** across all interns and amongst the top of full-time employees in the org.
+
+## Architectural Highlights
+
+- **400x Autocomplete Latency Improvement**: Migrated client-side fuzzy searching across 1.7 million fields (~4s in TypeScript) to a high-speed multithreaded C++ backend server (&lt;10ms processing, ~200ms end-to-end network response).
+- **10x Load Performance Acceleration**: Reduced load times from ~80s down to ~8s via parallelized requests and dynamic downsampling algorithms across tens of millions of telemetry data points, preserving UX responsiveness during interactive zoom and pan operations.
+- **Modern Full-Stack Stack**:
+  - **Server**: Modern C++, gRPC, Protocol Buffers
+  - **Client**: Angular TypeScript, Sass
+  - **Visualization**: Three.js (WebGL rendering) and D3.js (interactive plotting)
+- **Quality & Testing**: Built comprehensive unit and screenshot test suites, establishing the highest test coverage within the team.

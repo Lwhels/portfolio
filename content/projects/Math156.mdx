@@ -1,0 +1,27 @@
+---
+title: MiniPlaces Scene Recognition Benchmark
+description: Deep learning computer vision project for UCLA Math 156 benchmarking ResNet-18 transfer learning, custom CNNs, and MLPs on the MIT MiniPlaces dataset.
+date: "2025-03-14"
+repository: "Lwhels/math156-project"
+published: true
+---
+
+A computer vision and deep learning empirical study developed for UCLA Math 156 (Mathematical Foundations of Machine Learning). The project implements, trains, and rigorously benchmarks multiple neural network architectures for scene recognition on the MIT MiniPlaces benchmark dataset.
+
+## Key Features
+
+- **Architectural Comparisons:** Implemented and evaluated a progression of models: Linear Regression, Logistic Regression, Multi-Layer Perceptrons (MLP), custom Convolutional Neural Networks (CNN), and transfer learning using pre-trained ResNet-18 (`torchvision.models.resnet18`).
+- **Data Engineering & Augmentations:** Constructed custom PyTorch `Dataset` and `DataLoader` pipelines for MiniPlaces images, implementing data transformations, normalization, and tensor batching.
+- **Training & Optimization:** Engineered training loops utilizing Cross-Entropy loss, Adam and SGD optimizers with momentum, learning rate scheduling, and tqdm-integrated progress tracking.
+- **Performance Evaluation:** Visualized training/validation loss curves and accuracy trajectories across epochs; evaluated predictions via multi-class confusion matrix heatmaps rendered with Seaborn.
+
+## Built With
+
+- [PyTorch](https://pytorch.org/)
+- [Torchvision](https://pytorch.org/vision/)
+- [Python](https://www.python.org/)
+- [NumPy](https://numpy.org/)
+- [Scikit-Learn](https://scikit-learn.org/)
+- [Matplotlib](https://matplotlib.org/)
+- [Seaborn](https://seaborn.pydata.org/)
+- [Jupyter Notebook](https://jupyter.org/)

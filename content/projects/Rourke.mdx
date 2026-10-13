@@ -1,35 +1,29 @@
 ---
 title: RourkePalmer.com
-description: RourkePalmer.com is an e-commerce and video streaming website supporting the production of Rourke Palmer's Sci-Fi novels.
+description: E-commerce and multimedia streaming web platform supporting the publication of author Rourke Palmer's sci-fi novels.
+date: "2023-09-15"
+repository: "Lwhels/rourke"
+url: "https://rourkepalmer.com"
+published: true
 ---
 
-Coming Soon!
+RourkePalmer.com is a production e-commerce and media streaming web application built to support the release and merchandise distribution for sci-fi author Rourke Palmer.
 
-## Features
+## Key Features
 
-- **Authentication:** uses Firebase Authentication to provide a secure, seamless, and unique set of experiences to admin and conventional users
-- **Storage:** stores metadata for merchandise and multimedia resources using Firebase Firestore and stores those resources themselves in Firebase Storage
-- **Payment:** utilizes the Stripe payment API to provide users with a secure checkout Experience
-- **Hosting:** hosted using Firebase Hosting
-- **Conditional Rendering:** scales to mobile or desktop viewports
-- **SMTP Bulk Email:** uses AWS SES to enable admin users to contact other users with marketing information
-- **Animations:** animated using [Framer Motion](https://www.framer.com/motion/transition/) for an interactive user experience
-- **Design:** designed the UI/UX of the website using Figma
+- **Authentication & Role-Based Access:** Employs Firebase Authentication with custom claims separating conventional readers from administrative content managers.
+- **Data & Media Persistence:** Stores merchandise catalog metadata and chapter details in Cloud Firestore, with high-resolution digital media assets served from Firebase Storage.
+- **Stripe Payments Integration:** Integrated Stripe Checkout API for secure transactions, order fulfillment tracking, and webhook-driven purchase confirmation.
+- **Transactional & Marketing Email:** Configured AWS SES (Simple Email Service) and Nodemailer to handle order receipts and broadcast subscriber newsletters.
+- **Fluid Motion & Responsive Design:** Designed in Figma and developed with Next.js, TypeScript, Tailwind CSS, and Framer Motion for responsive mobile and desktop viewing.
 
-## Built with
+## Built With
 
-- [Next.js](https://nextjs.org)
-- [tailwindcss](https://tailwindcss.com)
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Firebase (Auth, Firestore, Storage)](https://firebase.google.com/)
+- [Stripe](https://stripe.com/)
 - [AWS SES](https://aws.amazon.com/ses/)
-- [Firebase](https://firebase.google.com/)
-- [Stripe](https://stripe.com/?utm_campaign=US_en_Search_Brand_Stripe_EXA-20047966507&utm_medium=cpc&utm_source=google&ad_content=670151298446&utm_term=stripe&utm_matchtype=e&utm_adposition=&utm_device=c&gclid=CjwKCAjwxaanBhBQEiwA84TVXIHzn5LjxwZ0UEk4OwetBQB-79V3S5nlY26NDnkZwjW23H9-_P7O-xoC2E8QAvD_BwE)
+- [Framer Motion](https://www.framer.com/motion/)
 - [Figma](https://www.figma.com/)
-
-## Role
-
-- Project Organizer:
-  - arranged and led meetings between the client and development team
-- Firebase Integration:
-  - implemented Firebase Authentication, Firestore, and Storage
-- UI/UX
-  - designed the user interface in Figma and transitioned those designs to tsx with tailwindcss

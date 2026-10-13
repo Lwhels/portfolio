@@ -1,0 +1,30 @@
+---
+title: Chess Odds AI
+description: Deep neural network engine and interactive Next.js dashboard predicting Grandmaster match outcomes and implied betting odds from over 600,000 FIDE games.
+date: "2024-10-23"
+repository: "Lwhels/chess-odds"
+published: true
+---
+
+Chess Odds AI is an end-to-end Machine Learning pipeline and interactive web application that predicts Win / Draw / Loss probabilities and computes vig-adjusted implied betting odds for Grandmaster chess games.
+
+Trained on over **600,000 FIDE-rated tournament games** from *The Week in Chess (TWIC)* database, the model captures non-linear player rating dynamics, rating differentials, historical head-to-head records, and White's first-move advantage.
+
+## Key Features
+
+- **PyTorch Residual MLP Architecture:** Custom deep learning network utilizing Batch Normalization, PReLU activations, Dropout regularization, and residual skip connections, outperforming standard Random Forest and Logistic Regression baselines with 74.73% accuracy.
+- **Vig-Adjusted Betting Lines:** Automatically converts predicted probability distributions into Decimal Odds (`2.10`, `3.40`) and American Moneyline Odds (`+110`, `+240`) adjusted for sportsbook bookmaker overround.
+- **Interactive Next.js Dashboard:** Modern glassmorphism web interface featuring live ELO rating sliders, head-to-head matchup simulators, and historical rivalry presets (Carlsen vs Nakamura, Kasparov vs Karpov).
+- **Command-Line Interface (CLI):** Fast CLI tool for batch evaluation and terminal odds queries (`python -m chess_odds.cli`).
+- **Automated Test Suite:** Comprehensive `pytest` test suite covering feature extraction, bounds verification, probability normalization, and odds conversion integrity.
+
+## Built With
+
+- [PyTorch](https://pytorch.org/)
+- [Next.js](https://nextjs.org/)
+- [Python 3.9+](https://www.python.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Scikit-Learn](https://scikit-learn.org/)
+- [python-chess](https://python-chess.readthedocs.io/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Pytest](https://pytest.org/)

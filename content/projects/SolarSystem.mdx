@@ -1,0 +1,23 @@
+---
+title: 3D Solar System
+description: Interactive 3D celestial mechanics simulation developed with WebGL and JavaScript featuring custom Gouraud, Phong, and Ring GLSL shaders.
+date: "2024-03-15"
+repository: "Lwhels/CS174A"
+published: true
+---
+
+A dynamic 3D celestial mechanics and solar system simulation developed for UCLA CS 174A (Computer Graphics), focusing on realistic lighting physics, custom GLSL shader pipelines, and interactive planetary hierarchy transformations.
+
+## Key Features
+
+- **Custom GLSL Shader Pipeline:** Implemented custom WebGL shaders including Gouraud shading (per-vertex lighting calculations), Phong shading (per-fragment specular and diffuse calculations), and a custom multi-banded Ring Shader with procedural frequency-based color striping.
+- **Procedural Solar Animation:** Simulated a pulsating coronal Sun with dynamic ambient illumination, color modulation, and point light generation that organically illuminates orbiting planetary bodies.
+- **Hierarchical Coordinate Transformations:** Architected orbital mechanics utilizing matrix stack transformations (`Mat4`), simulating orbital radii, rotation periods, planetary axial tilts, and multi-body moon orbits around planets.
+- **Interactive Camera Controls:** Real-time matrix attachment allowing the user to seamlessly anchor the camera to planetary bodies or freely navigate the orbital system.
+
+## Built With
+
+- [WebGL](https://www.khronos.org/webgl/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [GLSL (OpenGL Shading Language)](https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language)
+- tiny-graphics.js Framework

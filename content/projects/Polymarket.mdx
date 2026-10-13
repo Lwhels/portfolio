@@ -1,0 +1,29 @@
+---
+title: Polymarket Wallet & Trade Monitor
+description: Cross-platform desktop application monitoring Polymarket prediction market wallets with live desktop alerts, Discord webhook embeds, trade thresholds, and CSV/JSON export.
+date: "2024-02-15"
+repository: "Lwhels/polymarket"
+published: true
+---
+
+Polymarket Monitor is a cross-platform desktop application that tracks target wallet addresses on Polymarket prediction markets in real time. It monitors trade flow, identifies whale positions, and broadcasts instant alerts through native desktop notifications and Discord webhook integrations.
+
+## Key Features
+
+- **Multi-Wallet Monitoring:** Track multiple Polymarket wallet addresses simultaneously with customizable aliases (e.g., "Whale", "MarketMaker", "Shark").
+- **Custom Trade Thresholds:** Configure per-wallet minimum USD trade size thresholds alongside a global fallback threshold to filter out low-value market noise.
+- **Discord & Desktop Alerts:** Native notifications on macOS, Windows, and Linux paired with formatted Discord webhook embeds sent to dedicated trade and log channels.
+- **Sound Alerts:** Optional platform-native audio chimes triggered whenever new qualifying trades are captured.
+- **Trade History Export:** Export captured trade logs directly to CSV or JSON formats for offline quantitative analysis.
+- **Profile Management System:** Save, duplicate, switch, and import/export separate configuration profiles for different market strategies.
+- **Cross-Platform Auto-Updater:** Automated builds packaged with PyInstaller across macOS and Windows, with self-updating capabilities via GitHub Releases and GitHub Actions CI/CD.
+- **Automated Test Suite:** 153 automated tests including unit testing and pixelmatch visual regression tests for GUI component stability.
+
+## Built With
+
+- [Python 3.9+](https://www.python.org/)
+- [Tkinter / ttk](https://docs.python.org/3/library/tkinter.html)
+- [Discord Webhooks API](https://discord.com/developers/docs/resources/webhook)
+- [PyInstaller](https://pyinstaller.org/)
+- [GitHub Actions CI/CD](https://github.com/features/actions)
+- [Pytest](https://pytest.org/)

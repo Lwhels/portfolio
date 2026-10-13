@@ -1,6 +1,20 @@
 ---
-title: ext2 filesystem
-description: Created a mountable ext2 filesystem for the Linux kernel
+title: EXT2 File System
+description: Created a mountable ext2 filesystem for the Linux kernel in C++ with inode allocation, directory traversal, and block addressing.
 date: "2022-06-02"
 published: true
 ---
+
+A C++ systems programming project implementing a mountable EXT2 file system driver for the Linux kernel as part of UCLA CS 111 (Operating Systems).
+
+## Key Features
+
+- **Inode Management:** Handles inode allocation, deallocation, and metadata tracking across disk blocks.
+- **Directory Traversal:** Supports hierarchical file lookup, directory entry reading, and path resolution.
+- **Block Addressing:** Implements direct, singly-indirect, and doubly-indirect block mapping for large file access.
+
+## Built With
+
+- [C++](https://isocpp.org/)
+- [Linux Kernel](https://www.kernel.org/)
+- [POSIX API](https://pubs.opengroup.org/onlinepubs/9699919799/)
